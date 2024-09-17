@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vann</title>
+  
+  <!-- Custom Styles -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background: black;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden; /* Prevent scrollbars */
+    }
+    .container {
+      display: inline-block;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 5px 0;
+      padding: 0;
+    }
+    ul li {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #484848;
+      animation: light 2.0s linear forwards;
+    }
+    ul.title li {
+      font-size: 70px;
+    }
+    ul.subtitle li {
+      font-size: 20px;
+      animation-delay: 0.8s; /* Start after title animation */
+    }
+    @keyframes light {
+      0% {
+        color: #484848;
+        text-shadow: none;
+      }
+      25% {
+        color:#000000;
+      }
+      
+      50% {
+        color: #4A4643;
+      }
+      
+      75% {
+        color: #FFFDFB;
+      }
+      100% {
+        color: #FFFFFF;
+        text-shadow: 0 0 7px #FFFFFF, 0 0 50px #FFFFFF;
+      }
+    }
+    ul.title li:nth-child(1) {
+      animation-delay: 0s;
+    }
+    ul.title li:nth-child(2) {
+      animation-delay: 0.2s;
+      letter-spacing: 20px;
+    }
+    ul.title li:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    ul.title li:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+    ul.title li:nth-child(5) {
+      animation-delay: 0.8s;
+      letter-spacing: 20px;
+    }
+    ul.title li:nth-child(6) {
+      animation-delay: 1.0s;
+    }
+    ul.title li:nth-child(7) {
+      animation-delay: 1.2s;
+    }
+    ul.title li:nth-child(8) {
+      animation-delay: 1.4s;
+    }
+    ul.subtitle li:nth-child(1) {
+      animation-delay: 1.8s;
+    }
+    ul.subtitle li:nth-child(2) {
+      animation-delay: 2.2s;
+    }
+    ul.subtitle li:nth-child(3) {
+      animation-delay: 2.6s;
+    }
+    ul.subtitle li:nth-child(4) {
+      animation-delay: 3.0s;
+    }
+    ul.subtitle li:nth-child(5) {
+      animation-delay: 3.4s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="title">
+      <li>W</li>
+      <li>E</li>
+      <li>A</li>
+      <li>R</li>
+      <li>E</li>
+      <li>X</li>
+      <li>-</li>
+      <li>3</li>
+    </ul>
+  </div>
+  
+  <!-- Project -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Calculate total duration of all animations
+      const totalAnimationDuration = 5200; // Longest delay time in ms (3.4s) plus animation duration (2s)
+
+      // Set a timeout to redirect after animations finish
+      setTimeout(() => {
+        window.location.href = 'home.html'; // Redirect to home.html
+      }, totalAnimationDuration);
+    });
+  </script>
+</body>
+</html>

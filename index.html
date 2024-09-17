@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intro ~ Vann X3</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    body {
+      background-color: black;
+    }
+    video {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      padding: 15px 40px;
+      background-color: #3D4349;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 35px;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="intro-video">
+    <source src="index.mp4" type="video/mp4">
+    <source src="index.ogg" type="video/ogg">
+    Your browser doesn't support MP4.
+  </video>
+
+  <button class="play-btn" onclick="startVideo()">Pencet lah wak</button>
+
+  <script>
+    function startVideo() {
+      var video = document.getElementById("intro-video");
+      var playBtn = document.querySelector(".play-btn");
+
+      playBtn.style.display = 'none'; // Hide the button
+      video.style.display = 'block';  // Show the video
+      video.play();                   // Play the video
+
+      // Redirect to another page when the video ends
+      video.addEventListener('ended', function() {
+        window.location.href = 'intro.html'; // Replace 'nextpage.html' with the URL of the next page
+      });
+    }
+
+  </script>
+</body>
+
+</html>
